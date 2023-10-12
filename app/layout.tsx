@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
@@ -21,8 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={dm_sans.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={dm_sans.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          storageKey="notehub-theme"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
