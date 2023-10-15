@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { Toaster } from "sonner";
 
 const dm_sans = DM_Sans({
   weight: ["300", "400", "600", "700"],
@@ -33,6 +34,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey="notehub-theme"
           >
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
