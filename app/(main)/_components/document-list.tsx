@@ -61,7 +61,7 @@ const DocumentList = ({ parentDocumentId, level = 0 }: DocumentListProps) => {
           level === 0 && "hidden"
         )}
       >
-        No embedded notes
+        No notes
       </p>
       {documents.map((document) => (
         <div key={document._id}>
