@@ -1,5 +1,6 @@
 "use client";
 
+import ConfirmModal from "@/components/modals/confirm-modal";
 import Spinner from "@/components/spinner";
 import { Input } from "@/components/ui/input";
 import { api } from "@/convex/_generated/api";
@@ -94,9 +95,14 @@ const TrashBin = () => {
               >
                 <Undo className="w-4 h-4 text-muted-foreground" />
               </div>
-              <div role="button" className="rounded-sm p-2 hover:bg-primary/5">
-                <Trash className="w-4 h-4 text-muted-foreground" />
-              </div>
+              <ConfirmModal onConfirm={() => onRemove(document._id)}>
+                <div
+                  role="button"
+                  className="rounded-sm p-2 hover:bg-primary/5"
+                >
+                  <Trash className="w-4 h-4 text-muted-foreground" />
+                </div>
+              </ConfirmModal>
             </div>
           </div>
         ))}
