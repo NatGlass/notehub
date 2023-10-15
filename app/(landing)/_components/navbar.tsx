@@ -28,12 +28,20 @@ const Navbar = () => {
         {isLoading && <Spinner />}
         {!isAuthenticated && !isLoading && (
           <>
-            <SignInButton mode="modal">
+            <SignInButton
+              mode="modal"
+              afterSignInUrl="/documents"
+              afterSignUpUrl="/documents"
+            >
               <Button variant="ghost" size="sm">
                 Log in
               </Button>
             </SignInButton>
-            <SignInButton mode="modal">
+            <SignInButton
+              mode="modal"
+              afterSignInUrl="/documents"
+              afterSignUpUrl="/documents"
+            >
               <Button size="sm">Get Note Hub Free</Button>
             </SignInButton>
           </>
