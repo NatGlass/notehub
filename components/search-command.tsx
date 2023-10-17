@@ -65,6 +65,7 @@ const SearchCommand = () => {
               value={`${document._id}-${document.title}`}
               title={document.title}
               onSelect={onSelect}
+              className="bg-transparent hover:bg-primary/5"
             >
               {document.icon ? (
                 <p className="mr-2 text-[18px]">{document.icon}</p>
