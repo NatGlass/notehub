@@ -83,7 +83,7 @@ const Item = ({
         if (!expanded) {
           onExpand?.();
         }
-        // router.push(`/documents/${documentId}`);
+        router.push(`/documents/${documentId}`);
       }
     );
     toast.promise(promise, {
@@ -114,12 +114,11 @@ const Item = ({
           <ChevronIcon className="h-4 w-4 shrink-0 text-muted-foreground/50 dark:" />
         </div>
       )}
-      {document ? (
+      {documentIcon ? (
         <div className="shrink-0 mr-2 text-[18px]">{documentIcon}</div>
       ) : (
         <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
       )}
-      <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
       <span className="truncate">{label}</span>
       {isSearch && (
         <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
